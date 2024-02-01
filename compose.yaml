@@ -1,0 +1,12 @@
+services:
+  app:
+    command: [ "gradle", "--info", "run" ]
+    build:
+      context: .
+    image: gradle_local:8.6-rc-4-jdk21-jammy
+    stdin_open: true
+    tty: true
+    volumes:
+      - $PWD:$PWD
+    working_dir: $PWD
+
